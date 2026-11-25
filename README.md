@@ -1,8 +1,4 @@
-<div align="center">
-
-# purg
-
-**Make Cleaning Simple**
+<div align="center"> <h1><img src="purg-wordmark.svg" alt="purg" height="72"></h1>
 
 Open Source image cleaner for Windows. Swipe through a folder, decide in a second and review before anything is removed.
 
