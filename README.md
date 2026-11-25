@@ -70,7 +70,7 @@ Your Pictures folder, your screenshots, your phone's camera roll: they fill up w
 
 purg is a single portable `.exe`. It is **not an installer** and does not change your system.
 
-1. Go to the [**Releases**](../../releases) page and download the latest `Purg.exe`.
+1. Go to the [**Releases**](../../releases) page and download the latest `Purg.exe`. ( in assets )
 2. Install the .NET 10 Desktop Runtime if you do not have it yet.
 3. Double-click `Purg.exe`.
 
