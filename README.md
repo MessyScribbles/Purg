@@ -18,7 +18,7 @@ Your Pictures folder, your screenshots, your phone's camera roll: they fill up w
 
 **Purg** turns it into a swipe style process. Photos appear as cards. Press **→** to keep, **←** to mark for deletion ( or grab with the mouse ), and move on. When you are done, you review what you marked and confirm. Until then, **nothing on your disk changes.**
 
-> **Alpha release.** purg is early software.
+> **Alpha release.** Purg is early software.
 
 <div align="center">
   <img src="start.png" alt="Start screen" width="620">
@@ -58,16 +58,16 @@ Your Pictures folder, your screenshots, your phone's camera roll: they fill up w
 
 ## Getting started
 
-> **Windows may show "Windows protected your PC".** This happens because purg is a new app that is not code-signed yet. Click **More info**, then **Run anyway**. The full source code is in this repository if you would rather build it yourself.
+> **Windows may show "Windows protected your PC".** This happens because Purg is a new app that is not code-signed yet. Click **More info**, then **Run anyway**. The full source code is in this repository if you would rather build it yourself.
 
 ### Requirements
 
 - **Windows 10 (build 19041 or later) or Windows 11, 64-bit (x64)**
-- **[.NET 10 Desktop Runtime (x64)](https://dotnet.microsoft.com/download/dotnet/10.0)**: if purg does not start, you most likely need to install this
+- **[.NET 10 Desktop Runtime (x64)](https://dotnet.microsoft.com/download/dotnet/10.0)**: if Purg does not start, you most likely need to install this
 
 ### Install
 
-purg is a single portable `.exe`. It is **not an installer** and does not change your system.
+Purg is a single portable `.exe`. It is **not an installer** and does not change your system.
 
 1. Go to the [**Releases**](../../releases) page and download the latest `Purg.exe`. ( in assets )
 2. Install the .NET 10 Desktop Runtime if you do not have it yet.
@@ -82,26 +82,26 @@ purg is a single portable `.exe`. It is **not an installer** and does not change
 
 ## Your files are safe
 
-purg is built to be careful with your photos.
+Purg is built to be careful with your photos.
 
 - **Swiping only records a decision.** Files are not touched until you review and confirm.
 - **Recycle Bin by default.** You can restore photos until you empty it. Permanent deletion is a separate choice with a clear warning and a second confirmation.
-- **Double-checks before acting.** Just before removing a file, purg checks that it still exists and has not changed since you saw it.
+- **Double-checks before acting.** Just before removing a file, Purg checks that it still exists and has not changed since you saw it.
 - **Skips risky locations.** It will not run on network drives, drive roots or protected Windows folders, and it skips hidden or system files and cloud-only placeholders.
-- **Not a gallery or backup tool.** purg does not edit photos, upload them or back them up.
+- **Not a gallery or backup tool.** Purg does not edit photos, upload them or back them up.
 
-> purg does not free disk space on its own when using the Recycle Bin. Empty the Recycle Bin to reclaim the space.
+> Purg does not free disk space on its own when using the Recycle Bin. Empty the Recycle Bin to reclaim the space.
 
 ## Privacy
 
 - **Works offline.** No network connections and no update checks.
-- **No traces.** No image cache or temporary image files are written to disk, and purg does not remember which folders you opened.
+- **No traces.** No image cache or temporary image files are written to disk, and Purg does not remember which folders you opened.
 
 ## Using an Android phone over USB
 
 You can clean up a phone's camera roll straight from your PC. Connect the phone by USB, set it to **File Transfer** mode, then choose **Browse USB phone (Android)** on the start screen.
 
-- Deleting from a phone is **permanent**. It never goes through the Windows Recycle Bin, so purg shows an extra warning and asks for a second confirmation.
+- Deleting from a phone is **permanent**. It never goes through the Windows Recycle Bin, so Purg shows an extra warning and asks for a second confirmation.
 - This feature is **new and has not yet been tested on a wide range of real phones.** Treat it as experimental.
 
 ## Supported image formats
@@ -168,7 +168,7 @@ dotnet test .\Purg.sln -c Release
 
 ## Feedback
 
-Found a bug or have a suggestion? Please [open an issue](../../issues). Since purg is in alpha, bug reports are especially welcome.
+Found a bug or have a suggestion? Please [open an issue](../../issues). Since Purg is in alpha build, bug reports are especially welcome.
 
 ## License
 
