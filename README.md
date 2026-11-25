@@ -31,7 +31,7 @@ Your Pictures folder, your screenshots, your phone's camera roll: they fill up w
 | <img src="keep.png" alt="Swiping right to keep a photo"> | <img src="delete.png" alt="Swiping left to mark a photo for deletion"> |
 
 <div align="center">
-  <img src="confirm.png" alt="Confirm deletion screen">
+  <img src="confirm.png" alt="Confirm deletion screen" width="550">
 </div>
 
 ## Features
