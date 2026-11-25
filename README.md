@@ -19,6 +19,7 @@ Your Pictures folder, your screenshots, your phone's camera roll: they fill up w
 **Purg** turns it into a swipe style process. Photos appear as cards. Press **→** to keep, **←** to mark for deletion ( or grab with the mouse ), and move on. When you are done, you review what you marked and confirm. Until then, **nothing on your disk changes.**
 
 > **Alpha release.** Purg is early software.
+> 
 
 <div align="center">
   <img src="start.png" alt="Start screen" width="620">
@@ -60,6 +61,7 @@ Your Pictures folder, your screenshots, your phone's camera roll: they fill up w
 
 > **Windows may show "Windows protected your PC".** This happens because Purg is a new app that is not code-signed yet. Click **More info**, then **Run anyway**. The full source code is in this repository if you would rather build it yourself.
 
+> **Looking for mobile?** An Android alpha (Android 10+) is available as an `.apk` under **Releases** (`mobile-` tag).
 ### Requirements
 
 - **Windows 10 (build 19041 or later) or Windows 11, 64-bit (x64)**
