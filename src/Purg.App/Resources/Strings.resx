@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="AppTitle" xml:space="preserve"><value>purg</value></data>
+  <data name="Brand" xml:space="preserve"><value>purg</value></data>
+  <data name="BrandMark" xml:space="preserve"><value>p</value></data>
+  <data name="WindowMinimize" xml:space="preserve"><value>−</value></data>
+  <data name="WindowMaximize" xml:space="preserve"><value>□</value></data>
+  <data name="WindowRestore" xml:space="preserve"><value>❐</value></data>
+  <data name="WindowClose" xml:space="preserve"><value>×</value></data>
+  <data name="StartHeadline" xml:space="preserve"><value>Sort a folder of images</value></data>
+  <data name="StartHelper" xml:space="preserve"><value>Swipe right to keep, left to mark. Nothing is deleted until you review.</value></data>
+  <data name="BrowseFolder" xml:space="preserve"><value>Browse folder</value></data>
+  <data name="BrowseUsb" xml:space="preserve"><value>Browse USB phone (Android)</value></data>
+  <data name="UsbAndroidConfirmTitle" xml:space="preserve"><value>Confirm Android phone</value></data>
+  <data name="UsbAndroidConfirmMessage" xml:space="preserve"><value>The selected device is "{0}". USB phone mode is for Android phones only. Continue only if this is an Android phone.</value></data>
+  <data name="UsbNoDevices" xml:space="preserve"><value>No accessible USB phone folders were found.</value></data>
+  <data name="UsbScanFailed" xml:space="preserve"><value>The USB phone folder could not be scanned.</value></data>
+  <data name="UsbModeNotice" xml:space="preserve"><value>USB phone mode (Android only): Deleted images are permanently removed from the device and do not go to the Recycle Bin.</value></data>
+  <data name="UsbConfirmNotice" xml:space="preserve"><value>Nothing is removed until you confirm the permanent deletion.</value></data>
+  <data name="UsbFinalConfirmTitle" xml:space="preserve"><value>Permanently delete from phone</value></data>
+  <data name="UsbFinalConfirmMessage" xml:space="preserve"><value>This permanently deletes the selected images from the Android phone. They cannot be restored from the Windows Recycle Bin. Continue?</value></data>
+  <data name="PortablePickerTitle" xml:space="preserve"><value>Browse USB phone</value></data>
+  <data name="PortablePickerHeading" xml:space="preserve"><value>Choose a folder on your Android phone</value></data>
+  <data name="PortablePickerUp" xml:space="preserve"><value>Up</value></data>
+  <data name="PortablePickerOpen" xml:space="preserve"><value>Open</value></data>
+  <data name="PortablePickerChoose" xml:space="preserve"><value>Choose this folder</value></data>
+  <data name="PortablePickerCancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="PortablePickerNoDevices" xml:space="preserve"><value>No portable devices are connected.</value></data>
+  <data name="PortablePickerConnecting" xml:space="preserve"><value>Connecting to device...</value></data>
+  <data name="PortablePickerDeviceUnavailable" xml:space="preserve"><value>The selected device could not be opened.</value></data>
+  <data name="PortablePickerDeviceStorage" xml:space="preserve"><value>Device storage</value></data>
+  <data name="PortablePickerLoading" xml:space="preserve"><value>Loading folders...</value></data>
+  <data name="PortablePickerFolderUnavailable" xml:space="preserve"><value>This folder could not be read.</value></data>
+  <data name="PortablePickerFolderMissing" xml:space="preserve"><value>The selected folder is no longer available.</value></data>
+  <data name="AlphaBuild" xml:space="preserve"><value>Alpha build</value></data>
+  <data name="LoadingLabel" xml:space="preserve"><value>LOADING</value></data>
+  <data name="ScanningFiles" xml:space="preserve"><value>Found {0} images...</value></data>
+  <data name="ChangeFolder" xml:space="preserve"><value>Change folder</value></data>
+  <data name="FolderDialogTitle" xml:space="preserve"><value>Choose a photo folder</value></data>
+  <data name="FolderDialogDescription" xml:space="preserve"><value>Choose one local folder of photos</value></data>
+  <data name="ImageCount" xml:space="preserve"><value>{0} images</value></data>
+  <data name="Position" xml:space="preserve"><value>{0} of {1}</value></data>
+  <data name="SortPrefix" xml:space="preserve"><value>Sort:</value></data>
+  <data name="SortLargest" xml:space="preserve"><value>Largest first</value></data>
+  <data name="SortNewest" xml:space="preserve"><value>Newest first</value></data>
+  <data name="SortName" xml:space="preserve"><value>File name</value></data>
+  <data name="PhotoStatusMarked" xml:space="preserve"><value>Marked for deletion</value></data>
+  <data name="StatusKept" xml:space="preserve"><value>✓ Kept</value></data>
+  <data name="PhotoStatusGone" xml:space="preserve"><value>Already moved</value></data>
+  <data name="AllReviewed" xml:space="preserve"><value>All images reviewed</value></data>
+  <data name="UndoAction" xml:space="preserve"><value>Undo (Ctrl+Z)</value></data>
+  <data name="RedoAction" xml:space="preserve"><value>Redo (Ctrl+Y)</value></data>
+  <data name="Details" xml:space="preserve"><value>DETAILS</value></data>
+  <data name="Dimensions" xml:space="preserve"><value>Dimensions</value></data>
+  <data name="Size" xml:space="preserve"><value>Size</value></data>
+  <data name="Date" xml:space="preserve"><value>Date</value></data>
+  <data name="Camera" xml:space="preserve"><value>Camera</value></data>
+  <data name="TotalSize" xml:space="preserve"><value>Total size</value></data>
+  <data name="Megabytes" xml:space="preserve"><value>MB</value></data>
+  <data name="OfMegabytes" xml:space="preserve"><value>of {0} MB</value></data>
+  <data name="MegabytesFormat" xml:space="preserve"><value>{0:0.#} MB</value></data>
+  <data name="KilobytesFormat" xml:space="preserve"><value>{0:0} KB</value></data>
+  <data name="ReviewedFraction" xml:space="preserve"><value>{0} / {1}</value></data>
+  <data name="DimensionsFormat" xml:space="preserve"><value>{0} × {1}</value></data>
+  <data name="DimensionsUnavailable" xml:space="preserve"><value>—</value></data>
+  <data name="Reviewed" xml:space="preserve"><value>Reviewed</value></data>
+  <data name="MarkedTally" xml:space="preserve"><value>{0} images marked for deletion</value></data>
+  <data name="Review" xml:space="preserve"><value>Review</value></data>
+  <data name="DeleteHint" xml:space="preserve"><value>← Delete</value></data>
+  <data name="KeepHint" xml:space="preserve"><value>Keep →</value></data>
+  <data name="PreviewUnavailable" xml:space="preserve"><value>Preview unavailable</value></data>
+  <data name="PreviewTooLarge" xml:space="preserve"><value>Preview unavailable (file too large)</value></data>
+  <data name="PreviewCodecMissing" xml:space="preserve"><value>Preview unavailable (codec missing)</value></data>
+  <data name="PreviewPaused" xml:space="preserve"><value>Preview paused due to a slow file</value></data>
+  <data name="NoPhotos" xml:space="preserve"><value>No supported photos found in this folder.</value></data>
+  <data name="SkippedFiles" xml:space="preserve"><value>Some cloud-only files or shortcuts were skipped.</value></data>
+  <data name="SkippedPortableFiles" xml:space="preserve"><value>Some folders or images on the device could not be read and were skipped.</value></data>
+  <data name="ScanFailed" xml:space="preserve"><value>That folder could not be scanned. Check that you can open it, then try again.</value></data>
+  <data name="HashFailed" xml:space="preserve"><value>Could not check this photo while marking it. It remains marked in this session.</value></data>
+  <data name="FolderRejected" xml:space="preserve"><value>{0}</value></data>
+  <data name="FolderRequired" xml:space="preserve"><value>Choose a folder first.</value></data>
+  <data name="LocalFolderRequired" xml:space="preserve"><value>Choose a folder on a local drive.</value></data>
+  <data name="DriveRootNotAllowed" xml:space="preserve"><value>Choose a folder inside a local drive, not the drive itself.</value></data>
+  <data name="FolderUnavailable" xml:space="preserve"><value>That folder could not be opened.</value></data>
+  <data name="RegularFolderRequired" xml:space="preserve"><value>Choose a regular folder, not a shortcut.</value></data>
+  <data name="ProtectedFolder" xml:space="preserve"><value>Choose a different folder. This is a Windows or app folder.</value></data>
+  <data name="Back" xml:space="preserve"><value>Back</value></data>
+  <data name="ConfirmTitle" xml:space="preserve"><value>Confirm deletion</value></data>
+  <data name="ConfirmCount" xml:space="preserve"><value>{0} photos · {1} MB</value></data>
+  <data name="RecycleBinChoice" xml:space="preserve"><value>Send to Recycle Bin</value></data>
+  <data name="RecycleBinChoiceDescription" xml:space="preserve"><value>Recover these photos from the Recycle Bin until you empty it.</value></data>
+  <data name="PermanentDeleteChoice" xml:space="preserve"><value>Permanently delete</value></data>
+  <data name="PermanentDeleteChoiceDescription" xml:space="preserve"><value>Remove these photos without sending them to the Recycle Bin.</value></data>
+  <data name="ConfirmNotice" xml:space="preserve"><value>Before acting, purg checks that each photo is still the same and is safe to remove.</value></data>
+  <data name="PermanentDeleteWarning" xml:space="preserve"><value>Warning: Permanently deleted photos cannot be recovered or undone.</value></data>
+  <data name="ConfirmLargeSelectionWarning" xml:space="preserve"><value>More than half of the photos in this folder are marked for deletion.</value></data>
+  <data name="ConfirmCloudWarning" xml:space="preserve"><value>This folder may sync to a cloud service. Changes to its files could also sync.</value></data>
+  <data name="ConfirmRecycleBin" xml:space="preserve"><value>Send to Recycle Bin</value></data>
+  <data name="ConfirmPermanentDelete" xml:space="preserve"><value>Yes, permanently delete {0} photos</value></data>
+  <data name="SendingToRecycleBinTitle" xml:space="preserve"><value>Sending photos to Recycle Bin…</value></data>
+  <data name="DeletingPermanentlyTitle" xml:space="preserve"><value>Permanently deleting photos…</value></data>
+  <data name="RecycleProgress" xml:space="preserve"><value>{0} of {1} processed · {2} sent to Recycle Bin · {3} skipped · {4} failed</value></data>
+  <data name="PermanentProgress" xml:space="preserve"><value>{0} of {1} processed · {2} deleted · {3} skipped · {4} failed</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="DeletionResultTitle" xml:space="preserve"><value>Deletion results</value></data>
+  <data name="DeletionCancelledTitle" xml:space="preserve"><value>Deletion stopped</value></data>
+  <data name="ProcessedCount" xml:space="preserve"><value>Processed: {0}</value></data>
+  <data name="SentToRecycleBinCount" xml:space="preserve"><value>Sent to Recycle Bin: {0}</value></data>
+  <data name="PermanentlyDeletedCount" xml:space="preserve"><value>Permanently deleted: {0}</value></data>
+  <data name="SkippedCount" xml:space="preserve"><value>Skipped: {0}</value></data>
+  <data name="FailedCount" xml:space="preserve"><value>Failed: {0}</value></data>
+  <data name="ReasonCount" xml:space="preserve"><value>{0} · {1}</value></data>
+  <data name="OpenRecycleBin" xml:space="preserve"><value>Open Recycle Bin</value></data>
+  <data name="BackToFolder" xml:space="preserve"><value>Back to folder</value></data>
+  <data name="ChooseAnotherFolder" xml:space="preserve"><value>Choose another folder</value></data>
+  <data name="OperationStartFailed" xml:space="preserve"><value>The operation could not be started. No photos were processed.</value></data>
+  <data name="OpenRecycleBinFailed" xml:space="preserve"><value>The Recycle Bin could not be opened.</value></data>
+  <data name="ChangedAfterMarking" xml:space="preserve"><value>Changed after marking</value></data>
+  <data name="CloudOnlyFile" xml:space="preserve"><value>Cloud-only file</value></data>
+  <data name="LinkedFile" xml:space="preserve"><value>Shortcut or linked file</value></data>
+  <data name="FileUnavailable" xml:space="preserve"><value>File is in use or unavailable</value></data>
+  <data name="OutsideChosenFolder" xml:space="preserve"><value>File is outside the chosen folder</value></data>
+  <data name="DeleteUnverified" xml:space="preserve"><value>File could not be verified as removed</value></data>
+</root>

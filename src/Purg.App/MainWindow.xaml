@@ -1,0 +1,411 @@
+<Window x:Class="Purg.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+        Title=""
+        Icon="/Purg;component/Assets/purg.ico"
+        Width="1080"
+        Height="680"
+        MinWidth="840"
+        MinHeight="560"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="False"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanResize"
+        Background="#141312"
+        Foreground="#F0EDE7"
+        AllowDrop="True"
+        DragOver="Window_DragOver"
+        Drop="Window_Drop"
+        PreviewKeyDown="Window_PreviewKeyDown"
+        SizeChanged="Window_SizeChanged">
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome CaptionHeight="40"
+                            ResizeBorderThickness="6"
+                            GlassFrameThickness="0"
+                            CornerRadius="0"
+                            UseAeroCaptionButtons="False" />
+    </shell:WindowChrome.WindowChrome>
+    <Grid Background="#141312">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="#2B2926" BorderThickness="0,0,0,1" Background="#141312">
+            <Grid>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="16,0">
+                    <Border Width="20" Height="20" CornerRadius="5" Background="#1B1A19" BorderBrush="#2B2926" BorderThickness="1">
+                        <Image Width="18" Height="18" Source="/Purg;component/Assets/purg-logo.png" Stretch="Uniform" />
+                    </Border>
+                    <TextBlock x:Name="HeaderFolderText" MaxWidth="240" Margin="12,0,0,0"
+                               TextTrimming="None" Foreground="#F0EDE7" VerticalAlignment="Center" />
+                    <TextBlock x:Name="HeaderCountText" Margin="12,0,0,0" Foreground="#8F8B84" FontSize="11" VerticalAlignment="Center" />
+                    <Button x:Name="ChangeFolderButton" shell:WindowChrome.IsHitTestVisibleInChrome="True" Margin="16,0,0,0" Padding="8,4" Background="Transparent" BorderThickness="0" Foreground="#8F8B84" Focusable="False" Click="ChangeFolderButton_Click" />
+                </StackPanel>
+                <TextBlock x:Name="BrandText" Text="purg" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="Bahnschrift SemiBold, Bahnschrift, Segoe UI" FontSize="14" FontWeight="SemiBold" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" shell:WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Button x:Name="MinimizeButton" shell:WindowChrome.IsHitTestVisibleInChrome="True" Width="46" Height="39" Background="Transparent" BorderThickness="0" Focusable="False" Click="MinimizeButton_Click" />
+                    <Button x:Name="MaximizeButton" shell:WindowChrome.IsHitTestVisibleInChrome="True" Width="46" Height="39" Background="Transparent" BorderThickness="0" Focusable="False" Click="MaximizeButton_Click" />
+                    <Button x:Name="CloseButton" shell:WindowChrome.IsHitTestVisibleInChrome="True" Width="46" Height="39" Background="Transparent" BorderThickness="0" Focusable="False" Click="CloseButton_Click" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid x:Name="StartScreen" Grid.Row="1" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Width="520" Padding="40,34"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Background="#191816" BorderBrush="#262421" BorderThickness="1" CornerRadius="10">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock x:Name="StartHeadlineText" FontFamily="Bahnschrift SemiBold, Bahnschrift, Segoe UI"
+                               FontSize="22" FontWeight="SemiBold" Foreground="#F0EDE7"
+                               TextAlignment="Center" />
+                    <TextBlock x:Name="StartHelperText" MaxWidth="410" Margin="0,10,0,24"
+                               FontSize="13" Foreground="#A6A198" TextAlignment="Center"
+                               TextWrapping="Wrap" />
+                    <Button x:Name="BrowseFolderButton" Width="184" Height="46" Padding="20,10"
+                            HorizontalAlignment="Center" Background="#D46A52" BorderBrush="#D46A52"
+                            FontWeight="SemiBold" Focusable="False" Click="BrowseFolderButton_Click" />
+                    <Button x:Name="BrowseUsbButton" Content="Browse USB phone (Android)" Margin="0,10,0,0"
+                            Padding="14,8" HorizontalAlignment="Center" Background="Transparent"
+                            BorderBrush="#3A3733" Foreground="#A6A198" Focusable="False"
+                            Click="BrowseUsbButton_Click" />
+                    <TextBlock x:Name="StartErrorText" Foreground="#D46A52" TextWrapping="Wrap"
+                               TextAlignment="Center" Margin="0,14,0,0" />
+                </StackPanel>
+            </Border>
+            <TextBlock x:Name="AlphaBuildText" Grid.Row="1" Text="Alpha build" FontSize="11"
+                       Foreground="#8F8B84" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                       Margin="0,0,0,18" />
+        </Grid>
+
+        <Grid x:Name="Workspace" Grid.Row="1" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition x:Name="WorkspaceRailColumn" Width="290" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="44" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="76" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="20,0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock x:Name="PositionText" FontFamily="Cascadia Mono, Consolas" FontSize="11" Foreground="#8F8B84" VerticalAlignment="Center" />
+                        <Button x:Name="UndoButton" Style="{StaticResource HistoryIconButtonStyle}"
+                                Margin="8,0,0,0" Focusable="False" ToolTipService.ShowOnDisabled="True"
+                                Click="UndoButton_Click">
+                            <Path Data="M 6,7 L 10,3 M 6,7 L 10,11 M 6,7 H 14 C 18,7 20,9 20,13 V 16 C 20,19 18,21 15,21 H 11"
+                                  Style="{StaticResource HistoryIconPathStyle}"
+                                  StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+                                  StrokeLineJoin="Round" Stretch="Uniform" />
+                        </Button>
+                        <Button x:Name="RedoButton" Style="{StaticResource HistoryIconButtonStyle}"
+                                Margin="2,0,0,0" Focusable="False" ToolTipService.ShowOnDisabled="True"
+                                Click="RedoButton_Click">
+                            <Path Data="M 22,7 L 18,3 M 22,7 L 18,11 M 22,7 H 14 C 10,7 8,9 8,13 V 16 C 8,19 10,21 13,21 H 17"
+                                  Style="{StaticResource HistoryIconPathStyle}"
+                                  StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+                                  StrokeLineJoin="Round" Stretch="Uniform" />
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <TextBlock x:Name="SortPrefixText" FontSize="11" Foreground="#8F8B84" VerticalAlignment="Center" Margin="0,0,5,0" />
+                        <ComboBox x:Name="SortComboBox" Width="132" Height="30" Background="#22201E" Foreground="#F0EDE7" BorderBrush="#2B2926" SelectionChanged="SortComboBox_SelectionChanged" />
+                    </StackPanel>
+                </Grid>
+                <Grid x:Name="PhotoViewport" Grid.Row="1" ClipToBounds="True" Margin="24,10,24,14">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Border x:Name="UnderPhotoFrame" Grid.Row="0" Visibility="Collapsed" Opacity="0" IsHitTestVisible="False"
+                            BorderBrush="#4A4641" BorderThickness="1"
+                            CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,10,8,0"
+                            MaxWidth="1200" MaxHeight="760" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <ScaleTransform x:Name="UnderPhotoScale" ScaleX="0.96" ScaleY="0.96" />
+                        </Border.RenderTransform>
+                        <Image x:Name="UnderPhotoImage" Stretch="Uniform" MaxWidth="1200" MaxHeight="760" />
+                    </Border>
+                    <Border x:Name="PhotoFrame" Grid.Row="0" BorderBrush="#2B2926" BorderThickness="1" CornerRadius="8"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.85"
+                            Background="#151413" MinWidth="320" MinHeight="220" MaxWidth="1200" MaxHeight="760"
+                            Cursor="Hand"
+                            MouseLeftButtonDown="PhotoFrame_MouseLeftButtonDown"
+                            MouseMove="PhotoFrame_MouseMove" MouseLeftButtonUp="PhotoFrame_MouseLeftButtonUp">
+                        <Grid>
+                            <Image x:Name="PhotoImage" Stretch="Uniform" MaxWidth="1200" MaxHeight="760" />
+                            <Border x:Name="PhotoStatusPill" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12" Background="#D1141312" CornerRadius="5" Padding="8,4">
+                                <TextBlock x:Name="PhotoStatusText" FontSize="11" FontWeight="SemiBold" />
+                            </Border>
+                            <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Background="#D1141312" CornerRadius="5" Padding="7,3">
+                                <TextBlock x:Name="PhotoSizeText" FontFamily="Cascadia Mono, Consolas" FontSize="10" Foreground="#F0EDE7" />
+                            </Border>
+                            <Border x:Name="KeepRing" BorderBrush="#F0EDE7" BorderThickness="2" CornerRadius="8"
+                                    Background="Transparent" Opacity="0" IsHitTestVisible="False" />
+                            <Border x:Name="KeepStamp" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,54,0,0"
+                                    BorderBrush="#F0EDE7" BorderThickness="2" CornerRadius="4" Padding="10,4"
+                                    Background="#66141312" Opacity="0" IsHitTestVisible="False">
+                                <TextBlock Text="KEEP" FontSize="22" FontWeight="Bold" Foreground="#F0EDE7" />
+                            </Border>
+                            <Border x:Name="DeleteStamp" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,54,24,0"
+                                    BorderBrush="#D46A52" BorderThickness="2" CornerRadius="4" Padding="10,4"
+                                    Background="#66141312" Opacity="0" IsHitTestVisible="False">
+                                <TextBlock Text="Delete" FontSize="22" FontWeight="Bold" Foreground="#D46A52" />
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Grid x:Name="PreviewFallback" Grid.Row="0" Width="320" Height="220" Background="Transparent"
+                          HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"
+                          Cursor="Hand"
+                          MouseLeftButtonDown="PhotoFrame_MouseLeftButtonDown" MouseMove="PhotoFrame_MouseMove"
+                          MouseLeftButtonUp="PhotoFrame_MouseLeftButtonUp">
+                        <TextBlock x:Name="PreviewFallbackText" Foreground="#8F8B84" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" FontSize="14" />
+                    </Grid>
+                    <TextBlock x:Name="ScanBannerText" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#D46A52" FontSize="11" Margin="8" />
+                    <Grid x:Name="SwipeHintsPanel" Grid.Row="1" Margin="0,8,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="DeleteHintText" Grid.Column="0" Text="← Delete" HorizontalAlignment="Right"
+                                   Foreground="#8F8B84" FontSize="11" Margin="0,0,18,0" />
+                        <TextBlock x:Name="KeepHintText" Grid.Column="1" Text="Keep →" HorizontalAlignment="Left"
+                                   Foreground="#8F8B84" FontSize="11" Margin="18,0,0,0" />
+                    </Grid>
+                </Grid>
+                <Border Grid.Row="2" BorderBrush="#2B2926" BorderThickness="0,1,0,0" Background="#141312">
+                    <Grid Margin="8,8,14,8" SizeChanged="FilmstripHost_SizeChanged">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <ItemsControl x:Name="FilmstripItems">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Width="58" Height="58" Margin="0,0,8,0" Padding="2" Background="#151413" Focusable="False" Click="Thumbnail_Click">
+                                        <Grid>
+                                            <Image Source="{Binding Bitmap}" Stretch="UniformToFill" />
+                                            <Border BorderBrush="{Binding BorderBrush}" BorderThickness="2" CornerRadius="6" />
+                                            <Ellipse Width="6" Height="6" Fill="{Binding DotBrush}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,2,0" />
+                                        </Grid>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Border Grid.Column="1" Background="#1B1A19" BorderBrush="#2B2926" BorderThickness="1,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel Margin="20">
+                            <TextBlock x:Name="PortableModeBannerText" Foreground="#A6A198" FontSize="11"
+                                       TextWrapping="Wrap" Margin="0,0,0,14" Visibility="Collapsed" />
+                            <TextBlock x:Name="InspectorFilenameText" FontSize="16" FontWeight="Bold"
+                                       TextTrimming="CharacterEllipsis" Margin="0,0,0,2" />
+                            <TextBlock x:Name="InspectorSubfolderText" FontSize="11" Foreground="#8F8B84"
+                                       TextTrimming="CharacterEllipsis" Margin="0,0,0,14" />
+                            <TextBlock x:Name="DetailsHeadingText" FontSize="10" Foreground="#8F8B84" Margin="0,0,0,5" />
+                            <Grid x:Name="DimensionsRow" Margin="0,0,0,1">
+                                <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <TextBlock x:Name="DimensionsLabelText" FontSize="11" Foreground="#8F8B84" Padding="0,7" />
+                                <TextBlock x:Name="DimensionsValueText" Grid.Column="1" FontSize="11" FontFamily="Cascadia Mono, Consolas" Padding="0,7" TextTrimming="None" TextAlignment="Right" />
+                            </Grid>
+                            <Border Height="1" Background="#2B2926" />
+                            <Grid x:Name="SizeRow">
+                                <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <TextBlock x:Name="SizeLabelText" FontSize="11" Foreground="#8F8B84" Padding="0,7" />
+                                <TextBlock x:Name="SizeValueText" Grid.Column="1" FontSize="11" FontFamily="Cascadia Mono, Consolas" Padding="0,7" />
+                            </Grid>
+                            <Border Height="1" Background="#2B2926" />
+                            <Grid x:Name="DateRow">
+                                <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <TextBlock x:Name="DateLabelText" FontSize="11" Foreground="#8F8B84" Padding="0,7" />
+                                <TextBlock x:Name="DateValueText" Grid.Column="1" FontSize="11" FontFamily="Cascadia Mono, Consolas" Padding="0,7" />
+                            </Grid>
+                            <Border Height="1" Background="#2B2926" />
+                            <Grid x:Name="CameraRow">
+                                <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <TextBlock x:Name="CameraLabelText" FontSize="11" Foreground="#8F8B84" Padding="0,7" />
+                                <TextBlock x:Name="CameraValueText" Grid.Column="1" FontSize="11" Padding="0,7" />
+                            </Grid>
+                            <Border Background="#151413" BorderBrush="#2B2926" BorderThickness="1" CornerRadius="8"
+                                    Padding="16" Margin="0,20,0,0">
+                                <StackPanel>
+                                    <TextBlock x:Name="MarkedSummaryLabelText" FontSize="12" Foreground="#8F8B84" />
+                                    <Grid Margin="0,5,0,10">
+                                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+                                        <TextBlock x:Name="MarkedMegabytesText" FontSize="30" FontFamily="Cascadia Mono, Consolas" />
+                                        <TextBlock x:Name="MegabytesUnitText" Grid.Column="1" FontSize="12" Foreground="#8F8B84" VerticalAlignment="Bottom" Margin="5,0,0,5" />
+                                        <TextBlock x:Name="TotalMegabytesText" Grid.Column="2" FontSize="10" Foreground="#8F8B84" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,5" />
+                                    </Grid>
+                                    <Grid Margin="0,0,0,6">
+                                        <TextBlock x:Name="ReviewedLabelText" FontSize="10" Foreground="#8F8B84" />
+                                        <TextBlock x:Name="ReviewedCountText" FontSize="10" Foreground="#8F8B84" HorizontalAlignment="Right" />
+                                    </Grid>
+                                    <Border x:Name="ProgressTrack" Height="3" Background="#2B2926" CornerRadius="2" SizeChanged="ProgressTrack_SizeChanged">
+                                        <Border x:Name="ProgressFill" HorizontalAlignment="Left" Background="#D46A52" CornerRadius="2" />
+                                    </Border>
+                                    <TextBlock x:Name="MarkedTallyText" FontSize="10" Foreground="#8F8B84" Margin="0,10,0,0" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Border Grid.Row="1" BorderBrush="#2B2926" BorderThickness="0,1,0,0" Padding="20">
+                        <Button x:Name="ReviewButton" Height="42" Background="#4A231B" BorderBrush="#8C4131"
+                                FontWeight="SemiBold" Focusable="False" Click="ReviewButton_Click" />
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Grid x:Name="ConfirmScreen" Grid.Row="1" Visibility="Collapsed">
+            <Border Width="460" MaxWidth="520" Padding="28" Background="#1B1A19" BorderBrush="#2B2926" BorderThickness="1" CornerRadius="8"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel>
+                    <TextBlock x:Name="ConfirmTitleText" FontSize="18" FontWeight="Bold" Margin="0,0,0,18" />
+                    <TextBlock x:Name="ConfirmCountText" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,12" />
+                    <StackPanel Margin="0,0,0,12">
+                        <RadioButton x:Name="RecycleBinRadioButton" GroupName="DeletionMode" Focusable="False"
+                                     Checked="DeleteModeRadioButton_Checked"
+                                     Style="{StaticResource DeleteChoiceRadioButtonStyle}">
+                            <StackPanel>
+                                <TextBlock x:Name="RecycleBinChoiceText" FontSize="13" FontWeight="SemiBold" />
+                                <TextBlock x:Name="RecycleBinChoiceDescriptionText" FontSize="11" Foreground="#8F8B84"
+                                           TextWrapping="Wrap" Margin="0,3,0,0" />
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton x:Name="PermanentDeleteRadioButton" GroupName="DeletionMode" Focusable="False"
+                                     Checked="DeleteModeRadioButton_Checked"
+                                     Style="{StaticResource DeleteChoiceRadioButtonStyle}" Margin="0,8,0,0">
+                            <StackPanel>
+                                <TextBlock x:Name="PermanentDeleteChoiceText" FontSize="13" FontWeight="SemiBold" />
+                                <TextBlock x:Name="PermanentDeleteChoiceDescriptionText" FontSize="11" Foreground="#8F8B84"
+                                           TextWrapping="Wrap" Margin="0,3,0,0" />
+                            </StackPanel>
+                        </RadioButton>
+                    </StackPanel>
+                    <TextBlock x:Name="ConfirmNoticeText" FontSize="12" Foreground="#8F8B84" TextWrapping="Wrap" LineHeight="19" />
+                    <TextBlock x:Name="PortableConfirmNoticeText" FontSize="12" Foreground="#D9A093"
+                               TextWrapping="Wrap" LineHeight="19" Margin="0,10,0,0" Visibility="Collapsed" />
+                    <Border x:Name="PermanentDeleteWarningCard" Background="#401A16" BorderBrush="#D46A52" BorderThickness="1"
+                            CornerRadius="6" Padding="12" Margin="0,12,0,0" Visibility="Collapsed">
+                        <TextBlock x:Name="PermanentDeleteWarningText" Foreground="#FFD4C8" FontSize="13"
+                                   FontWeight="Bold" TextWrapping="Wrap" />
+                    </Border>
+                    <TextBlock x:Name="ConfirmWarningText" FontSize="12" Foreground="#D9A093" TextWrapping="Wrap" Margin="0,12,0,0" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,22,0,0">
+                        <Button x:Name="ConfirmBackButton" Margin="0,0,8,0" Focusable="False" Click="ConfirmBackButton_Click" />
+                        <Button x:Name="ConfirmDeleteButton" Background="#D46A52" BorderBrush="#D46A52" FontWeight="SemiBold"
+                                Focusable="False" Click="ConfirmDeleteButton_Click" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid x:Name="ProcessingScreen" Grid.Row="1" Visibility="Collapsed">
+            <StackPanel Width="420" MaxWidth="520" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Name="OperationTitleText" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,12" />
+                <TextBlock x:Name="OperationProgressText" FontSize="12" Foreground="#8F8B84" HorizontalAlignment="Center" Margin="0,0,0,12" />
+                <Border x:Name="OperationProgressTrack" Height="5" Background="#2B2926" CornerRadius="3" SizeChanged="OperationProgressTrack_SizeChanged">
+                    <Border x:Name="OperationProgressFill" HorizontalAlignment="Left" Background="#D46A52" CornerRadius="3" />
+                </Border>
+                <Button x:Name="CancelOperationButton" Width="112" Margin="0,20,0,0" HorizontalAlignment="Center" Focusable="False" Click="CancelOperationButton_Click" />
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="ResultScreen" Grid.Row="1" Visibility="Collapsed">
+            <Border Width="500" MaxWidth="560" MaxHeight="560" Padding="28" Background="#1B1A19" BorderBrush="#2B2926" BorderThickness="1" CornerRadius="8"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel>
+                        <TextBlock x:Name="ResultTitleText" FontSize="18" FontWeight="Bold" Margin="0,0,0,18" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock x:Name="ProcessedCountText" FontSize="12" Foreground="#8F8B84" />
+                                <TextBlock x:Name="CompletedCountText" FontSize="12" Margin="0,7,0,0" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock x:Name="SkippedCountText" FontSize="12" Foreground="#8F8B84" />
+                                <TextBlock x:Name="FailedCountText" FontSize="12" Foreground="#8F8B84" Margin="0,7,0,0" />
+                            </StackPanel>
+                        </Grid>
+                        <ItemsControl x:Name="ResultReasonsItems" Margin="0,14,0,0" />
+                        <TextBlock x:Name="ResultActionErrorText" FontSize="11" Foreground="#D9A093"
+                                   TextWrapping="Wrap" Margin="0,10,0,0" />
+                        <StackPanel Margin="0,22,0,0">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Button x:Name="BackToFolderButton" Margin="0,0,8,0" Focusable="False" Click="BackToFolderButton_Click" />
+                                <Button x:Name="ChooseAnotherFolderButton" Focusable="False" Click="ChooseAnotherFolderButton_Click" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                                <Button x:Name="OpenRecycleBinButton" Focusable="False" Click="OpenRecycleBinButton_Click" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+        <Grid x:Name="LoadingScreen" Grid.Row="0" Grid.RowSpan="2" Visibility="Visible"
+              Opacity="1" Background="#120E0D">
+            <Viewbox Stretch="UniformToFill" ClipToBounds="True">
+                <Grid Width="1440" Height="607" Background="#120E0D" ClipToBounds="True">
+                    <Image Width="1440" Height="607" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Source="/Purg;component/Assets/splash.png" Stretch="UniformToFill"
+                           RenderOptions.BitmapScalingMode="HighQuality" />
+                    <Canvas Width="1440" Height="607" IsHitTestVisible="False">
+                        <Ellipse x:Name="LoadingSunGlow" Width="420" Height="420"
+                                 Canvas.Left="582" Canvas.Top="82" Opacity="0">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#66F4A06A" Offset="0" />
+                                    <GradientStop Color="#33D46A52" Offset="0.55" />
+                                    <GradientStop Color="#00D46A52" Offset="1" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Ellipse Width="440" Height="104" Canvas.Left="500" Canvas.Top="388">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush RadiusX="0.5" RadiusY="0.5">
+                                    <GradientStop Color="#F2170E0D" Offset="0" />
+                                    <GradientStop Color="#EC170E0D" Offset="0.58" />
+                                    <GradientStop Color="#98170E0D" Offset="0.82" />
+                                    <GradientStop Color="#00170E0D" Offset="1" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ProgressBar x:Name="LoadingProgressBar" Width="240" Height="3"
+                                     Canvas.Left="600" Canvas.Top="421" Minimum="0" Maximum="100"
+                                     Value="0" IsIndeterminate="False" BorderThickness="0"
+                                     Background="#2E2420" Foreground="#D46A52" />
+                        <TextBlock x:Name="LoadingLabelText" Width="300" Canvas.Left="570"
+                                   Canvas.Top="435" Text="LOADING" FontSize="10"
+                                   Foreground="#8F8B84" TextAlignment="Center"
+                                   FontFamily="Segoe UI Variable, Segoe UI" />
+                    </Canvas>
+                </Grid>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</Window>

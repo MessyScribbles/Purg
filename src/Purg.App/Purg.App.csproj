@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <PlatformTarget>x64</PlatformTarget>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Purg</AssemblyName>
+    <Product>purg</Product>
+    <Title>purg</Title>
+    <RootNamespace>Purg.App</RootNamespace>
+    <ApplicationIcon>Assets\purg.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>false</IncludeNativeLibrariesForSelfExtract>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Assets\purg-logo.png" />
+    <Resource Include="Assets\purg.ico" />
+    <Resource Include="Assets\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Purg.Session\Purg.Session.csproj" />
+    <ProjectReference Include="..\Purg.Platform\Purg.Platform.csproj" />
+    <ProjectReference Include="..\Purg.Scan\Purg.Scan.csproj" />
+    <ProjectReference Include="..\Purg.Decode\Purg.Decode.csproj" />
+    <ProjectReference Include="..\Purg.Mover\Purg.Mover.csproj" />
+  </ItemGroup>
+</Project>
