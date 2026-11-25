@@ -2,7 +2,6 @@
 
 Open Source image cleaner for Windows. Swipe through a folder, decide in a second and review before anything is removed.
 
-[![CI](https://github.com/MessyScribbles/Purg/actions/workflows/ci.yml/badge.svg)](https://github.com/MessyScribbles/Purg/actions/workflows/ci.yml)
 ![Status](https://img.shields.io/badge/status-alpha-orange)
 ![Platform](https://img.shields.io/badge/platform-Windows%20x64-blue)
 ![.NET](https://img.shields.io/badge/.NET-10-512BD4)
