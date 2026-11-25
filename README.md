@@ -12,11 +12,11 @@ Open Source image cleaner for Windows. Swipe through a folder, decide in a secon
 
 ---
 
-## What is purg?
+## What is Purg?
 
 Your Pictures folder, your screenshots, your phone's camera roll: they fill up with blurry shots, duplicates and things you dont need anymore. Cleaning them up one by one in File Explorer is slow and boring.
 
-**purg** turns it into a swipe style process. Photos appear as cards. Press **→** to keep, **←** to mark for deletion ( or grab with the mouse ), and move on. When you are done, you review what you marked and confirm. Until then, **nothing on your disk changes.**
+**Purg** turns it into a swipe style process. Photos appear as cards. Press **→** to keep, **←** to mark for deletion ( or grab with the mouse ), and move on. When you are done, you review what you marked and confirm. Until then, **nothing on your disk changes.**
 
 > **Alpha release.** purg is early software.
 
