@@ -6,7 +6,7 @@ Open Source image cleaner for Windows. Swipe through a folder, decide in a secon
 ![Platform](https://img.shields.io/badge/platform-Windows%20x64-blue)
 ![.NET](https://img.shields.io/badge/.NET-10-512BD4)
 
-<img src="splash.png" alt="purg loading screen" width="800">
+<img src="prevw.png" alt="purg loading screen" width="800">
 
 </div>
 
