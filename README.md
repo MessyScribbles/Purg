@@ -58,6 +58,8 @@ Your Pictures folder, your screenshots, your phone's camera roll: they fill up w
 
 ## Getting started
 
+> **Windows may show "Windows protected your PC".** This happens because purg is a new app that is not code-signed yet. Click **More info**, then **Run anyway**. The full source code is in this repository if you would rather build it yourself.
+
 ### Requirements
 
 - **Windows 10 (build 19041 or later) or Windows 11, 64-bit (x64)**
