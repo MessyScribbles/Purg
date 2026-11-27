@@ -22,7 +22,7 @@ Your Pictures folder, your screenshots, your phone's camera roll: they fill up w
 > 
 
 <div align="center">
-  <img src="start.png" alt="Start screen" width="620">
+  <img src="image.png" alt="Start screen" width="850">
 </div>
 
 ## Screenshots
